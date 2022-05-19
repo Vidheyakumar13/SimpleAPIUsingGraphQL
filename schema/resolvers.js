@@ -12,6 +12,13 @@ const resolvers = {
             const user = _.find(userList, {id: Number(id)})
             return user;
         },
+    },
+    Mutation: {
+        createUser: (parents, args) =>{
+            const user = args.input
+            return user;
+        }
+
     }
 }
 
