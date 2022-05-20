@@ -17,6 +17,17 @@ const resolvers = {
         createUser: (parents, args) =>{
             const user = args.input
             return user;
+        },
+        updateUser: (parents, args)=>{
+            const {id, newusername} = args.input;
+            let userUpdated;
+            UserList.forEach((user)=>{
+                if(user.id === Number(id)){
+                    user.username = newusername;
+                    userUpdated = user;
+                }
+            });
+            return userUpdated;
         }
 
     }
